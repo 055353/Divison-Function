@@ -1,0 +1,28 @@
+def division(number1, number2):
+    """
+    Performs division of two numbers.
+
+    Parameters:
+    number1 (int or float): The numerator.
+    number2 (int or float): The denominator.
+
+    Returns:
+    float: The result of the division if successful.
+    If a division by zero occurs, an appropriate message is printed.
+    If an index error occurs, an appropriate message is printed (though this is unlikely in this context).
+    """
+    try:
+        return number1 / number2
+    except ZeroDivisionError:
+        print("Can't divide by zero")
+    except IndexError:
+        print("Please enter a value")
+
+try:
+    num1 = int(input("Please enter the first number \n"))
+    num2 = int(input("Please enter the second number \n"))
+    result = division(number1=num1, number2=num2)
+except ValueError:
+    result = "Please enter a valid number"
+
+print(result)
